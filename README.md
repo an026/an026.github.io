@@ -6,6 +6,6 @@
   <samp>
     ଘ(˵╹-╹)━☆ my mockup<br><br>
     inspiration: glassmorphism, prism light refraction<br><br>
-    <img src="https://i.imgur.com/5l01HYJ.png" width="540px" align="center">
+    <img src="https://i.imgur.com/Wt7wPvd.png" width="540px" align="center">
   </samp>
 </p>
