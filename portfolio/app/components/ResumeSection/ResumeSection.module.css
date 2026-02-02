@@ -1,21 +1,22 @@
 .section {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
-    /* section spacing */
+    gap: 4.5rem;
 }
 
 .h2 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: 600;
     line-height: 1.2;
+    color: var(--foreground);
 }
 
 .h3 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: 0.5rem;
+    color: var(--foreground);
 }
 
 .block {
@@ -24,9 +25,19 @@
     gap: 0.5rem;
 }
 
+.divider {
+  height: 1px;
+  width: 100%;
+  background: color-mix(in srgb, var(--foreground) 20%, transparent);
+  margin: 0.5rem 0;
+}
+
+
+
 .text {
     font-size: 0.95rem;
     line-height: 1.6;
+    color: var(--foreground);
 }
 
 .bold {
@@ -37,13 +48,28 @@
     opacity: 0.7;
     font-size: 0.9rem;
     line-height: 1.4;
+    color: var(--foreground);
 }
+
+.headerRow {
+    display: flex;
+    align-items: baseline;
+    /* aligns link nicely with heading text */
+    justify-content: space-between;
+    /* pushes PDF link to the right */
+    gap: 1rem;
+}
+
 
 .pdfLink {
     font-size: 0.95rem;
     text-decoration: underline;
     opacity: 0.85;
     width: fit-content;
+    color: var(--foreground);
+    white-space: nowrap;
+    /* prevents wrapping on wide screens */
+
 }
 
 .pdfLink:hover {
@@ -52,30 +78,7 @@
 
 .inlineLink {
     text-decoration: underline;
-}
-
-.iconRow {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 0.25rem;
-}
-
-.iconLink {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.9;
-    transition: opacity 120ms ease;
-}
-
-.iconLink:hover {
-    opacity: 1;
-}
-
-.icon {
-    width: 20px;
-    height: 20px;
+    color: var(--foreground);
 }
 
 /* Skills */
@@ -102,9 +105,7 @@
     margin-top: 0.2rem;
     object-fit: contain;
     transform: scale(1.2);
-
 }
-
 
 .expText {
     display: flex;
@@ -116,6 +117,7 @@
     font-size: 0.95rem;
     font-weight: 600;
     line-height: 1.4;
+    color: var(--foreground);
 }
 
 /* Projects */
@@ -143,7 +145,9 @@
     aspect-ratio: 16 / 9;
     border-radius: 10px;
     overflow: hidden;
-    background: rgba(0, 0, 0, 0.06);
+
+    /* replaces rgba(0,0,0,0.06) with theme-aware tint */
+    background: color-mix(in srgb, var(--foreground) 6%, transparent);
 }
 
 .projectImg {
@@ -154,12 +158,14 @@
     font-size: 0.95rem;
     font-weight: 600;
     line-height: 1.4;
+    color: var(--foreground);
 }
 
 .projectMeta {
     font-size: 0.85rem;
     opacity: 0.7;
     line-height: 1.4;
+    color: var(--foreground);
 }
 
 /* ---- Timeline Experience (fixed continuous line) ---- */
@@ -176,13 +182,13 @@
     content: "";
     position: absolute;
     left: 9px;
-    /* center of the 18px rail column */
     top: 12px;
-    /* start a bit below the first dot */
     bottom: 12px;
-    /* end a bit above the last dot */
     width: 2px;
-    background: rgba(0, 0, 0, 0.12);
+
+    /* replaces rgba(0,0,0,0.12) */
+    background: color-mix(in srgb, var(--foreground) 18%, transparent);
+
     border-radius: 999px;
 }
 
@@ -204,18 +210,23 @@
     width: 10px;
     height: 10px;
     border-radius: 999px;
-    background: rgba(0, 0, 0, 0.7);
+
+    /* replaces rgba(0,0,0,0.7) */
+    background: color-mix(in srgb, var(--foreground) 75%, transparent);
+
     margin-top: 12px;
-    /* aligns dot with title baseline */
     justify-self: center;
-    /* centers dot in 18px rail column */
 }
 
+/* Logo container gets a soft “chip” background that works in both modes */
 .tLogoWrap {
     width: 50px;
     height: 50px;
     border-radius: 12px;
-    /* background: rgba(0, 0, 0, 0.04); */
+
+    /* replaces rgba(0,0,0,0.04) */
+    background: white;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -243,6 +254,7 @@
     font-size: 0.92rem;
     line-height: 1.55;
     opacity: 0.9;
+    color: var(--foreground);
 }
 
 /* Mobile */
@@ -254,7 +266,6 @@
 
     .timeline::before {
         left: 9px;
-        /* still centered in 18px rail column */
     }
 
     .tLogoWrap {

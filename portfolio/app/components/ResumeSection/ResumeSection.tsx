@@ -1,57 +1,20 @@
 import Image from "next/image";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
 import styles from "./ResumeSection.module.css";
 
 export default function ResumeSection() {
   return (
     <section className={styles.section}>
-      <h2 className={styles.h2}>Resume</h2>
+      <div className={styles.headerRow}>
+        <h2 className={styles.h2}>Resume</h2>
 
-      {/* PDF link */}
-      <a
-        href="https://drive.google.com/..."
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.pdfLink}
-      >
-        View / Download PDF
-      </a>
-
-      {/* Contact */}
-      <div className={styles.block}>
-        <h3 className={styles.h3}>Contact</h3>
-
-        <p className={styles.text}>
-          Atlanta, GA ·{" "}
-          <a
-            href="mailto:allisonvu.swe@gmail.com"
-            className={styles.inlineLink}
-          >
-            allisonvu.swe@gmail.com
-          </a>
-        </p>
-
-        <div className={styles.iconRow}>
-          <a
-            href="https://www.linkedin.com/in/an026/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className={styles.iconLink}
-          >
-            <FaLinkedin className={styles.icon} />
-          </a>
-
-          <a
-            href="https://github.com/an026"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className={styles.iconLink}
-          >
-            <FaGithub className={styles.icon} />
-          </a>
-        </div>
+        <a
+          href="https://drive.google.com/..."
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.pdfLink}
+        >
+          View / Download PDF
+        </a>
       </div>
 
       {/* Education */}
@@ -63,6 +26,8 @@ export default function ResumeSection() {
           B.S. Computer Science · Aug 2023 – Dec 2026
         </p>
       </div>
+
+      <div className={styles.divider} />
 
       {/* Technical Skills */}
       <div className={styles.block}>
@@ -87,6 +52,8 @@ export default function ResumeSection() {
           </p>
         </div>
       </div>
+
+      <div className={styles.divider} />
 
       {/* Experience */}
       <div className={styles.block}>
@@ -117,9 +84,8 @@ export default function ResumeSection() {
 
               <ul className={styles.bullets}>
                 <li>
-                  Incoming SWE intern focused on building
-                  backend solutions using Java and Spring Boot
-                  distributed microservices.
+                  Incoming SWE intern focused on building backend solutions
+                  using Java and Spring Boot distributed microservices.
                 </li>
                 <li>
                   Interested in designing scalable, reliable systems with clean
@@ -154,13 +120,13 @@ export default function ResumeSection() {
 
               <ul className={styles.bullets}>
                 <li>
-                  Built React/Next.js landing page for core product,
-                  improving usability,
-                  responsiveness, and traffic by 60%.
+                  Built React/Next.js landing page for core product, improving
+                  usability, responsiveness, and traffic by 60%.
                 </li>
                 <li>
-                  Collaborated with engineers and designers to ship
-                  final landing page redesign and implementation into production within 5 months.
+                  Collaborated with engineers and designers to ship final
+                  landing page redesign and implementation into production
+                  within 5 months.
                 </li>
               </ul>
             </div>
@@ -194,14 +160,15 @@ export default function ResumeSection() {
                 </li>
                 <li>
                   Reviewed architecture, code quality, and development practices
-                  while also overseeing
-                  collaboration and conflict resolution.
+                  while also overseeing collaboration and conflict resolution.
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
+
+      <div className={styles.divider} />
 
       {/* Projects */}
       <div className={styles.block}>
@@ -235,6 +202,8 @@ export default function ResumeSection() {
           </div>
         </div>
       </div>
+      <div className={styles.divider} />
+
     </section>
   );
 }
