@@ -1,0 +1,264 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    /* section spacing */
+}
+
+.h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.muted {
+    opacity: 0.7;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.pdfLink {
+    font-size: 0.95rem;
+    text-decoration: underline;
+    opacity: 0.85;
+    width: fit-content;
+}
+
+.pdfLink:hover {
+    opacity: 1;
+}
+
+.inlineLink {
+    text-decoration: underline;
+}
+
+.iconRow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.25rem;
+}
+
+.iconLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+    transition: opacity 120ms ease;
+}
+
+.iconLink:hover {
+    opacity: 1;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Skills */
+.skillList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+/* Experience */
+.expList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.expItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.logo {
+    margin-top: 0.2rem;
+    object-fit: contain;
+    transform: scale(1.2);
+
+}
+
+
+.expText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.expTitle {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Projects */
+.projectGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+    .projectGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.projectMedia {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.projectImg {
+    object-fit: cover;
+}
+
+.projectTitle {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.projectMeta {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    line-height: 1.4;
+}
+
+/* ---- Timeline Experience (fixed continuous line) ---- */
+.timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    margin-top: 10px;
+}
+
+/* One continuous line for the whole timeline */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    /* center of the 18px rail column */
+    top: 12px;
+    /* start a bit below the first dot */
+    bottom: 12px;
+    /* end a bit above the last dot */
+    width: 2px;
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 999px;
+}
+
+/* 3 columns:
+   1) rail (dot only)
+   2) logo
+   3) content
+*/
+.tItem {
+    position: relative;
+    display: grid;
+    grid-template-columns: 18px 44px 1fr;
+    column-gap: 20px;
+    align-items: start;
+}
+
+/* Dot sits in the rail column */
+.tDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.7);
+    margin-top: 12px;
+    /* aligns dot with title baseline */
+    justify-self: center;
+    /* centers dot in 18px rail column */
+}
+
+.tLogoWrap {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    /* background: rgba(0, 0, 0, 0.04); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* nice bullets */
+.bullets {
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    opacity: 0.9;
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+    .tItem {
+        grid-template-columns: 18px 40px 1fr;
+        column-gap: 12px;
+    }
+
+    .timeline::before {
+        left: 9px;
+        /* still centered in 18px rail column */
+    }
+
+    .tLogoWrap {
+        width: 40px;
+        height: 40px;
+    }
+}
