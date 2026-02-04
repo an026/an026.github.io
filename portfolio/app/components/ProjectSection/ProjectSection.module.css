@@ -1,0 +1,256 @@
+/* Section framing (mirrors ResumeSection patterns) */
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--foreground);
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: color-mix(in srgb, var(--foreground) 20%, transparent);
+  margin: 0.5rem 0;
+}
+
+/* Projects grid/cards */
+.projectGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .projectGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Make the clickable card not look like a button */
+.projectCardBtn {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+
+  border-radius: 14px;
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.projectCardBtn:hover {
+  transform: translateY(-4px);
+}
+
+.projectCardBtn:active {
+  transform: translateY(-2px);
+}
+
+.projectCardBtn:focus-visible {
+  outline: 2px solid rgba(120, 120, 120, 0.6);
+  outline-offset: 6px;
+  border-radius: 16px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  border-radius: 14px;
+  padding: 12px;
+  transition: box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+  border: 1px solid color-mix(in srgb, var(--foreground) 10%, transparent);
+}
+
+.projectCardBtn:hover .project {
+  background: color-mix(in srgb, var(--foreground) 1%, transparent);
+  border-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.projectMedia {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--foreground) 6%, transparent);
+
+  transition: transform 220ms ease;
+  transform: translateZ(0);
+}
+
+.projectCardBtn:hover .projectMedia {
+  transform: scale(1.01);
+}
+
+.projectImg {
+  object-fit: cover;
+  transition: transform 260ms ease;
+}
+
+.projectCardBtn:hover .projectImg {
+  transform: scale(1.03);
+}
+
+.projectTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--foreground);
+
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.projectCardBtn:hover .projectTitle {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.projectMeta {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  line-height: 1.4;
+  color: var(--foreground);
+}
+
+/* Modal overlay with blurred background */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Modal card */
+.modal {
+  position: relative;
+  width: min(920px, 100%);
+  max-height: min(80vh, 760px);
+  overflow: auto;
+
+  background: var(--background);
+  color: var(--foreground);
+  border: 1px solid rgba(120, 120, 120, 0.2);
+  border-radius: 18px;
+  padding: 22px;
+}
+
+/* Close button */
+.modalClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(120, 120, 120, 0.25);
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+.modalClose:hover {
+  background: rgba(120, 120, 120, 0.14);
+}
+
+.modalHeader {
+  padding-right: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.modalTitle {
+  font-size: 1.4rem;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.modalSkills {
+  opacity: 0.75;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.modalLink {
+  width: fit-content;
+  margin-top: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0.9;
+  color: var(--foreground);
+}
+
+.modalLink:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.modalBody {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.modalImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(120, 120, 120, 0.2);
+}
+
+.modalImg {
+  object-fit: cover;
+}
+
+.modalDesc {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  opacity: 0.9;
+}
+
+@media (max-width: 760px) {
+  .modalBody {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .projectCardBtn,
+  .project,
+  .projectMedia,
+  .projectImg,
+  .projectTitle {
+    transition: none !important;
+  }
+
+  .projectCardBtn:hover {
+    transform: none;
+  }
+
+  .projectCardBtn:hover .projectMedia,
+  .projectCardBtn:hover .projectImg,
+  .projectCardBtn:hover .projectTitle {
+    transform: none;
+  }
+}

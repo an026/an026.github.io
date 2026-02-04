@@ -1,6 +1,6 @@
 import HomeSection from "./components/HomeSection";
 import ResumeSection from "./components/ResumeSection";
-import ResearchSection from "./components/ResearchSection";
+import ProjectSection from "./components/ProjectSection";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -18,9 +18,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="research" className={styles.section}>
+      <section id="project" className={styles.section}>
         <div className={styles.container}>
-          <ResearchSection />
+          <ProjectSection />
         </div>
       </section>
     </main>

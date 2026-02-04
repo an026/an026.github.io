@@ -14,7 +14,10 @@ export default function NavBar() {
           <a className={styles.link} href="#resume">Resume</a>
         </li>
         <li>
-          <a className={styles.link} href="#research">Research</a>
+          <a className={styles.link} href="#project">Projects</a>
+        </li>
+        <li>
+          <a className={styles.link} href="#hobby">Hobbies</a>
         </li>
       </ul>
     </nav>
