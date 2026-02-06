@@ -154,7 +154,7 @@ export default function ResumeSection() {
                 <p className={styles.expTitle}>
                   Software Engineering Intern — QuantData
                 </p>
-                <p className={styles.muted}>May 2025 – Present</p>
+                <p className={styles.muted}>May 2025 – Oct 2025</p>
               </div>
 
               <ul className={styles.bullets}>
@@ -188,9 +188,9 @@ export default function ResumeSection() {
             <div className={styles.tContent}>
               <div className={styles.tHeader}>
                 <p className={styles.expTitle}>
-                  Lead Teaching Assistant — Georgia Tech
+                  Lead Software Engineering Teaching Assistant — Georgia Tech
                 </p>
-                <p className={styles.muted}>Aug 2024 – Present</p>
+                <p className={styles.muted}>Aug 2024 – Dec 2025</p>
               </div>
               <ul className={styles.bullets}>
                 <li>

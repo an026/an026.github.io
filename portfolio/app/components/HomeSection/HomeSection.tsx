@@ -81,7 +81,7 @@ export default function HomeSection() {
 
       <div className={styles.imageColumn}>
         <Image
-          src="/Hello.jpg"
+          src="/ProfilePic.JPG"
           alt="Photo of Allison Vu"
           width={360}
           height={360}

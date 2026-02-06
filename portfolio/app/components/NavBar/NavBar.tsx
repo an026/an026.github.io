@@ -16,9 +16,9 @@ export default function NavBar() {
         <li>
           <a className={styles.link} href="#project">Projects</a>
         </li>
-        <li>
+        {/* <li>
           <a className={styles.link} href="#hobby">Hobbies</a>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
