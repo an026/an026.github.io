@@ -4,8 +4,6 @@ import { useEffect, useId, useState } from "react";
 import Image from "next/image";
 import styles from "./ProjectSection.module.css";
 
-type SectionKind = "text" | "list";
-
 type ProjectSectionBlock =
   | {
       title: string;
@@ -41,7 +39,11 @@ const projects: Project[] = [
         content:
           "Virtual try-on experience that lets users preview outfits on a model using AI-assisted image generation.",
       },
-      { title: "Role", kind: "text", content: "UX Designer + Full-Stack Engineer" },
+      {
+        title: "Role",
+        kind: "text",
+        content: "Group Project, Full-Stack Engineer + UX Designer",
+      },
       {
         title: "Context",
         kind: "text",
@@ -67,55 +69,36 @@ const projects: Project[] = [
       {
         title: "Outcome",
         kind: "list",
-        items: ["Shipped a working prototype and demo flow suitable for judging and walkthroughs."],
+        items: [
+          "Shipped a working prototype and demo flow suitable for judging and walkthroughs.",
+        ],
       },
     ],
   },
   {
-    id: "housing-reviews",
-    title: "Off-Campus Housing Reviews",
-    skills: "React · Supabase · PostgreSQL",
+    id: "persona",
+    title: "Persona",
+    skills:
+      "Next.js · TypeScript · Supabase (Postgres + Auth) · Express · LLM API",
     link: "https://example.com",
-    imageSrc: "/placeholders/project-placeholder.png",
+    imageSrc: "/Persona.png",
     sections: [
       {
         title: "Overview",
         kind: "text",
         content:
-          "Review platform for off-campus housing with searchable listings, authenticated posting, and rating aggregation.",
+          "Persona lets you design characters with memory, authored lore, and consistent behavior.",
+      },
+      {
+        title: "Role",
+        kind: "text",
+        content: "Solo Project, Full-Stack Engineer + UX Designer",
       },
       {
         title: "Context",
         kind: "text",
         content:
-          "Personal project iterated over multiple weeks/months. Focused on end-to-end UX and data modeling rather than rapid demo scope.",
-      },
-      {
-        title: "Role",
-        kind: "text",
-        content: "Product-minded Full-Stack Engineer (UX-first implementation)",
-      },
-      {
-        title: "Implementation",
-        kind: "list",
-        items: [
-          "Designed relational schema in PostgreSQL (via Supabase) for listings, reviews, and user identities.",
-          "Implemented CRUD flows with auth-gated posting and clean browsing UX.",
-          "Built searchable listing views and rating aggregation for quick comparison.",
-        ],
-      },
-      {
-        title: "Key Decisions",
-        kind: "list",
-        items: [
-          "Designed for trust and readability: structured review fields and consistent browsing patterns.",
-          "Kept the UX lightweight to reduce friction for first-time contributors.",
-        ],
-      },
-      {
-        title: "Next Steps",
-        kind: "list",
-        items: ["Add moderation/reporting, richer filtering, and basic analytics to understand search-to-post conversion."],
+          "Persona was built to explore how user-authored systems are implemented in production environments. Features such as persistent character state, structured lore, and external AI model integration informed the use of relational schemas, authenticated APIs, and backend policy enforcement. The project prioritizes correctness, clear separation of concerns, and extensibility.",
       },
     ],
   },
@@ -304,8 +287,6 @@ export default function ProjectSection() {
           ))}
         </div>
       </div>
-
-      <div className={styles.divider} />
 
       {activeProject && (
         <ProjectModal
