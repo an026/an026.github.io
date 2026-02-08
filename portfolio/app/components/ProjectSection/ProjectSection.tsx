@@ -80,7 +80,7 @@ const projects: Project[] = [
     title: "Persona",
     skills:
       "Next.js · TypeScript · Supabase (Postgres + Auth) · Express · LLM API",
-    link: "https://example.com",
+    link: "https://github.com/an026/persona",
     imageSrc: "/Persona.png",
     sections: [
       {

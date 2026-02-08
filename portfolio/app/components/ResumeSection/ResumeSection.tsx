@@ -44,7 +44,7 @@ export default function ResumeSection() {
         <h2 className={styles.h2}>Resume</h2>
 
         <a
-          href="https://drive.google.com/..."
+          href="https://drive.google.com/file/d/14EEFOsrXyf0TNcuE9AjBCnX_VheJVBVg/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.pdfLink}
