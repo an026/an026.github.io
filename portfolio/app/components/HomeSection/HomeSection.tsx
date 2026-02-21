@@ -32,6 +32,8 @@ export default function HomeSection() {
           served as a Lead Teaching Assistant for Georgia Tech&#39;s CS2340:
           Software Engineering course, mentoring teams on system design, code
           quality, and disciplined engineering practices.
+
+          Let&#39;s connect!
         </p>
 
         {/* Contact (moved from Resume) */}
